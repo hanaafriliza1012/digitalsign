@@ -1,0 +1,31 @@
+body {
+  margin: 0 auto;
+  font-family: sans-serif;
+}
+.wrapper {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: solid 1px #ddd;
+  margin: 10px 0px;
+}
+.signature-pad {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 400px;
+  height: 200px;
+}
+textarea {
+  width: 100%;
+  min-height: 100px;
+}
+#camera {
+  width: 120px;
+  height: 120px;
+  border: 0px solid #ddd;
+}
