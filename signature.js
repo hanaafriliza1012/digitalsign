@@ -105,8 +105,8 @@ const signature = {
         e.preventDefault();
         const payload = `{
             id: ${$("#id_peserta").val()},
-            link: "https://lib.ilkomdigitalsignature.my.id/verify.php?id=${$("#id_peserta").val()}",
-            foto: "https://lib.ilkomdigitalsignature.my.id/base64.php?id=${$("#id_kegiatan").val()}"
+            link: "https://lib.ilkomdigisign.my.id/verify.php?id=${$("#id_peserta").val()}",
+            foto: "https://lib.ilkomdigisign.my.id/base64.php?id=${$("#id_kegiatan").val()}"
         }`;
     
         $('form').append(`<input type="hidden" name="qrc_link" value="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${payload}" />`)
