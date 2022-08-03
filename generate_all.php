@@ -25,8 +25,8 @@ while ($row = mysqli_fetch_array($query)) {
 
     $data = [
         'id_peserta' => $row['id_peserta'],
-        'link' => "https://lib.ilkomdigitalsignature.my.id/verify.php?id=" . $row['id_peserta'],
-        'foto' => "https://lib.ilkomdigitalsignature.my.id/base64.php?id=" . $row['id_kegiatan']
+        'link' => "https://lib.ilkomdigisign.my.id/verify.php?id=" . $row['id_peserta'],
+        'foto' => "https://lib.ilkomdigisign.my.id/base64.php?id=" . $row['id_kegiatan']
     ];
 
     $hasil_qr = file_get_contents('https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' . json_encode($data, JSON_UNESCAPED_SLASHES));
