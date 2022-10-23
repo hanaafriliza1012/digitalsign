@@ -75,7 +75,7 @@ include('koneksi.php');
                                 </td>
                                 <td>
                                     <a href="verify.php?id=<?php echo htmlentities($row['id_peserta']); ?>"><button type="button" class="btn btn-primary">Verify</button></a>
-                                    <a href="base64.php?id=<?php echo htmlentities($row['id_kegiatan']); ?>"><button type="button" class="btn btn-primary">Base64</button></a>
+                                    <!-- <a href="base64.php?id=<?php echo htmlentities($row['id_kegiatan']); ?>"><button type="button" class="btn btn-primary">Base64</button></a> -->
                                 </td>
 
 

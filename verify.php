@@ -48,6 +48,8 @@ $id = $_GET['id']
             <tbody>
                 <?php $query = mysqli_query($conn, "SELECT * FROM dokumen JOIN peserta ON dokumen.id_peserta = peserta.id_peserta JOIN kegiatan ON dokumen.id_kegiatan = kegiatan.id_kegiatan WHERE peserta.id_peserta = " . $id);
                 $row = mysqli_fetch_array($query);
+                $query_ = mysqli_query($conn, "SELECT * FROM data_dokumen WHERE id_kegiatan = " . $row['id_kegiatan']);
+                $row_ = mysqli_fetch_array($query_);
                 ?>
                 <tr>
                     <th scope="row">Status</th>
@@ -96,6 +98,14 @@ $id = $_GET['id']
                             } else {
                                 echo "";
                             } ?></td>
+                </tr>
+                <tr>
+                    <th scope="row">Base-64</th>
+                    <td>
+                        <div>
+                            <textarea class="form-control" id="floatingTextarea2" style="height: 100px"><?php echo htmlentities($row_['data_uri']); ?></textarea>
+                        </div>
+                    </td>
                 </tr>
             </tbody>
         </table>

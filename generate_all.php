@@ -7,16 +7,6 @@ $query = mysqli_query($conn, "SELECT * FROM peserta WHERE status = 1 AND id_kegi
 
 $urut = 1;
 
-// if (mysqli_fetch_array($query) == null) {
-//     $redirect = '/view.php?id=' . $id;
-//     header("Location: $redirect");
-//     exit();
-// }
-
-// if (count(mysqli_fetch_array($query)) == 1) {
-//     echo 'test';
-// }
-
 while ($row = mysqli_fetch_array($query)) {
     $created_at = date("Y-m-d H:i:s");
     $updated_at = date("Y-m-d H:i:s");
@@ -25,8 +15,8 @@ while ($row = mysqli_fetch_array($query)) {
 
     $data = [
         'id_peserta' => $row['id_peserta'],
-        'link' => "https://lib.ilkomdigisign.my.id/verify.php?id=" . $row['id_peserta'],
-        'foto' => "https://lib.ilkomdigisign.my.id/base64.php?id=" . $row['id_kegiatan']
+        'link' => "https://lib.ilkomdigisign.my.id/verify.php?id=" . $row['id_peserta']
+        // 'foto' => "https://lib.ilkomdigisign.my.id/base64.php?id=" . $row['id_kegiatan']
     ];
 
     $hasil_qr = file_get_contents('https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=' . json_encode($data, JSON_UNESCAPED_SLASHES));

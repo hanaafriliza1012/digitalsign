@@ -27,7 +27,7 @@ const signature = {
         // form action
         $('#save').click(function() {
             getSignaturePad();
-            return false; // set true to submits the form.
+            return false; // set true to submits the form!.
         });
     
         // action on click button clear
@@ -105,8 +105,7 @@ const signature = {
         e.preventDefault();
         const payload = `{
             id: ${$("#id_peserta").val()},
-            link: "https://lib.ilkomdigisign.my.id/verify.php?id=${$("#id_peserta").val()}",
-            foto: "https://lib.ilkomdigisign.my.id/base64.php?id=${$("#id_kegiatan").val()}"
+            link: "https://lib.ilkomdigisign.my.id/verify.php?id=${$("#id_peserta").val()}"
         }`;
     
         $('form').append(`<input type="hidden" name="qrc_link" value="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${payload}" />`)
@@ -114,9 +113,8 @@ const signature = {
         const data = new FormData();
         data.append("id_kegiatan", $("#id_kegiatan").val());
         data.append("id_peserta", $("#id_peserta").val());
-        data.append("id_data_dokumen", $("#id_data_dokumen").val());
+        // data.append("id_data_dokumen", $("#id_data_dokumen").val());
         data.append("qrc", `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${payload}`)
-
 
         $.ajax({
             type:'POST',
